@@ -28,3 +28,5 @@ This is a Laravel-based web application, designed to provide a modern, robust fr
    ```bash
    git clone https://github.com/DomantasBaras/task-manager.git
    cd task-manager
+   docker build -t laravel-app
+   docker-compose up -d
