@@ -43,7 +43,7 @@ export default {
   },
   data() {
     return {
-      tasks: [], // Array to hold tasks fetched from the API
+      tasks: [], 
       tasksByStatus: {
         paused: [],
         'in progress': [],
@@ -70,7 +70,7 @@ export default {
   methods: {
     async fetchTasks() {
       try {
-        const response = await fetch(`/api/tasks`); // Replace with your API endpoint
+        const response = await fetch(`/api/tasks`); 
         const data = await response.json();
         this.tasks = data;
         this.sortTasksByStatus();

@@ -33,8 +33,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Logout route that redirects to the dashboard after logging out
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
-// Include authentication routes (register, login, etc.)
 require __DIR__ . '/auth.php';

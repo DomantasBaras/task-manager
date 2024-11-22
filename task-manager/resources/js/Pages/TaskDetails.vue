@@ -2,7 +2,6 @@
   <main-layout>
     <template v-slot:default>
       <div v-if="entity" class="entity-detail-page">
-        <!-- Left: Entity Information (Editable) -->
         <div v-if="entity && entity.title" class="entity-info-section">
           <p><strong>Title:</strong> 
             <h2>
@@ -324,22 +323,22 @@ input {
   display: inline-block;
   padding: 0.5em 1.7em;
   margin: 0 0.1em 0.1em 0;
-  border: 0.16em solid rgb(80, 10, 172); /* Match the color of the primary button */
-  background-color: #ffffff; /* White background */
+  border: 0.16em solid rgb(80, 10, 172); 
+  background-color: #ffffff; 
   border-radius: 2em;
   box-sizing: border-box;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
-  color: rgb(80, 10, 172); /* Same color as the primary button border */
-  text-shadow: none; /* No shadow for cleaner appearance */
+  color: rgb(80, 10, 172); 
+  text-shadow: none; 
   text-align: center;
   transition: all 0.2s;
 }
 
 .secondary-button:hover {
-  background-color: rgb(80, 10, 172); /* Match primary button hover color */
-  color: #ffffff; /* White text on hover */
+  background-color: rgb(80, 10, 172); 
+  color: #ffffff; 
 }
 
 .secondary-button:focus {

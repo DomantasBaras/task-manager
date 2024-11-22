@@ -11,7 +11,6 @@
         </span>
         <div>
           <p><strong>{{ comment.username }}</strong>: {{ comment.comment }}</p>
-          <!-- When "Reply" is clicked, emit 'replyTo' event to the parent -->
           <button @click="$emit('replyTo', comment)">Reply</button>
         </div>
       </div>
@@ -48,13 +47,11 @@ export default {
 </script>
 
 <style scoped>
-/* Comment Wrapper */
 .comment-wrapper {
   list-style: none;
   padding-left: 0;
 }
 
-/* Comment Box Styling */
 .comment {
   display: flex;
   align-items: center;
@@ -69,12 +66,10 @@ export default {
   background-color: #f9f9f9;
 }
 
-/* Icons Styling */
 .icon {
   margin-right: 10px;
 }
 
-/* Replies Styling */
 .comment-replies {
   padding-left: 3.5rem;
   position: relative;
@@ -94,7 +89,6 @@ export default {
   height: calc(100% - 1rem);
 }
 
-/* Reply Tick */
 .comment.reply:before {
   background-color: Silver;
   content: '';

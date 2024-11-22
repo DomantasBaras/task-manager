@@ -18,7 +18,7 @@ class TaskController extends Controller
     // Get a specific task
     public function show(Task $task)
     {
-        return $task->load('comments'); // Load comments with the task
+        return $task->load('comments');
     }
 
     public function getLogs(Task $task)

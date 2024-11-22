@@ -16,7 +16,7 @@ class UserController extends Controller
     // Get a specific task
     public function show(User $user)
     {
-        return $user->load('comments'); // Load comments with the task
+        return $user->load('comments'); 
     }
 
     // Create a new task

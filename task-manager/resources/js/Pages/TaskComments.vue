@@ -35,7 +35,7 @@ export default {
   data() {
     const username = ref(usePage().props.auth?.user?.name); 
     return {
-      replyingTo: null,   // Tracks the comment being replied to (null means top-level comment)
+      replyingTo: null,   
       newComment: '', 
       username : username
     };
@@ -43,11 +43,10 @@ export default {
   methods: {
     // This method is called when the reply button is clicked
     setReplyTarget(comment) {
-      this.replyingTo = comment;  // Set the target comment for the reply
+      this.replyingTo = comment;  
       this.newComment = `@${comment.comment} `;  
     },
 
-    // Submit the comment (top-level or reply)
     submitComment() {
       if (!this.newComment.trim()) {
         alert('Comment cannot be empty.');
@@ -57,7 +56,7 @@ export default {
       const payload = {
         task_id: this.taskId,
         comment: this.newComment,
-        parent_id: this.replyingTo ? this.replyingTo.id : null,  // Attach parent ID if replying
+        parent_id: this.replyingTo ? this.replyingTo.id : null,  
         username: this.username
       };
 
@@ -69,11 +68,7 @@ export default {
           
         .then((response) => {
           const savedComment = response.data;
-
-          // Add the comment to the list (if it's a reply, it gets added under the parent comment)
           this.addComment(savedComment, this.replyingTo?.id || null);
-
-          // Reset the textarea and the replyingTo state
           this.newComment = '';
           this.replyingTo = null;
         })
